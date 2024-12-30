@@ -20,7 +20,6 @@ import chupetao from "./assets/chupetao.jpg";
 import cyberpunk from "./assets/cyberpunk.png";
 import step11Audio from "./assets/Thuli.ogg";
 import step12Audio from "./assets/WhatsApp Ptt 2024-09-27 at 01.03.33.ogg";
-import tojimaki from "./assets/tojimaki.jpg";
 import olhos from "./assets/blueEyes.jpg";
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
   const [playedStep11, setPlayedStep11] = useState(false);
   const [playedStep12, setPlayedStep12] = useState(false);
   const [isPlayngBackgroundMusic, setIsPlayngBackgroundMusic] = useState(false);
-  const [buttonPosition, setButtonPosition] = useState({ top: 0, left: 0 });
+  const [buttonPosition, setButtonPosition] = useState<{ top: string; left: string }>({ top: "0", left: "0" });  // Alteração aqui
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
@@ -119,7 +118,7 @@ function App() {
     }
     const randomTop = Math.random() * 80;
     const randomLeft = Math.random() * 80;
-    setButtonPosition({ top: `${randomTop}vh`, left: `${randomLeft}vw` });
+    setButtonPosition({ top: `${randomTop}vh`, left: `${randomLeft}vw` }); // Alteração aqui
   };
 
   const nextStep = () => {
@@ -130,7 +129,7 @@ function App() {
     if (step > 0) setStep(step - 1);
   };
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {  // Alteração aqui
     setInputValue(event.target.value);
   };
 
@@ -171,22 +170,6 @@ function App() {
       "Tudo bem, de toda forma, fico feliz por ter vivido esse tempo com você. Foi bastante divertido. Te desejo tudo de melhor <3.",
       "Oi, mô. Seja bem vinda ao inicio de nós. E nada melhor que começar isso com uma água com limão, certo?",
     ];
-
-    // if (step === 15) {
-    //   return (
-    //     <div className="step15">
-    //       <p className="videoText">Por favor, digite o seu numero de anel</p>
-    //       <input
-    //         type="text"
-    //         value={inputValue}
-    //         onChange={handleInputChange}
-    //         placeholder="Digite aqui..."
-    //         className="inputField"
-    //       />
-    //       <button onClick={() => setStep(16)}>Enviar</button>
-    //     </div>
-    //   );
-    // }
 
     if (step === 15) {
       return (
@@ -235,6 +218,9 @@ function App() {
         <div className="overlay">
           <p className="videoText">
             A senha é o dia que a gente começou a conversar:{" "}
+          </p>
+          <p className="videoText">
+          Obs: As imagens que você verá a seguir não foram escolhidas com foco na qualidade, mas sim por remeterem a você e a nós. 
           </p>
           <input
             type="text"
