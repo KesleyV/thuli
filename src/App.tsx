@@ -195,7 +195,7 @@ function App() {
             key={step}
             text="Acordar e te ver é como despertar no paraíso, olhando para o céu mais limpo e com o azul mais profundo. E é isso que eu quero para o resto da minha vida."
           />
-          <button onClick={() => setStep(17)}>💛💛💛💛</button>
+          <button onClick={() => setStep(17)}>💜💜💜💜</button>
         </div>
       );
     }
