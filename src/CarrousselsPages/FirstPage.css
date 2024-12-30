@@ -1,0 +1,29 @@
+.container {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 192, 203, 0.5),
+    rgba(230, 230, 250, 0.5)
+  );
+  border-radius: 15px;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid black;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 500px;
+  word-wrap: break-word;
+}
+
+.text {
+  font-family: "Lobster", cursive;
+  font-size: 2em;
+  white-space: pre-wrap;
+  margin: 0;
+  width: 100%;
+  text-align: justify;
+  color: white;
+  text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
+  filter: brightness(1.1);
+  padding: 10px;
+}
